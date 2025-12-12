@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import matplotlib.pyplot as plt
-import pandas as pd
 import os
 home=os.path.expanduser("~")
 data=f"{home}/cpu_directory/collector.log"
