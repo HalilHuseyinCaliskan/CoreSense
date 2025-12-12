@@ -12,6 +12,7 @@ with open(data,"r") as f:
             temp_list.pop()
     
 plt.figure(figsize=(6,6))
+plt.gcf().canvas.manager.set_window_title("CPU Temperature Chart")
 plt.plot(range(len(temp_list)),temp_list,color="red",linewidth=2)
 plt.title("CPU Temperature During Time")
 plt.xlabel("Time (s)")
