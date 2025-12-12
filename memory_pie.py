@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import matplotlib.pyplot as plt
-available_memory_file = "/var/log/available_memory.log"
-used_memory_file = "/var/log/used_memory.log"
+available_memory_file = "$HOME/memory_directory/available_memory.log"
+used_memory_file = "$HOME/memory_directory/used_memory.log"
 with open(available_memory_file,"r") as f:
     available_memory_str = f.read()
     if available_memory_str.endswith("Gi"):
