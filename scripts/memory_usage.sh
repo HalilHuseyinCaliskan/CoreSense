@@ -1,7 +1,6 @@
 #!/bin/bash
 
 mkdir -p "$HOME/memory_directory"
-mkdir -p "$HOME/cpu_directory"
 LOG_FILE="$HOME/memory_directory/memory.log"
 Used_LOG_FILE="$HOME/memory_directory/used_memory.log"
 Available_LOG_FILE="$HOME/memory_directory/available_memory.log"
