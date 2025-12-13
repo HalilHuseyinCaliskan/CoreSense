@@ -18,7 +18,8 @@ for i in range(length):
     with open(dosya,"r") as f:
         cpu_temperature = int(f.read())/1000
         cpu_temperature_list.append(cpu_temperature)
-
+        
+plt.gcf().canvas.manager.set_window_title("CPU Cores with Temperatures")
 plt.bar(cpu_core_list,cpu_temperature_list,width=0.5,color="skyblue",edgecolor="black")
 for i,v in enumerate(cpu_temperature_list):
     plt.text(i,v+0.5,str(v),ha="center")
