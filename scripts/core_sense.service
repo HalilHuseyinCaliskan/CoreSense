@@ -1,0 +1,11 @@
+[Unit]
+Description=CoreSense Servisi
+[Service]
+ExecStart=%h/CoreSense/scripts/commends.sh
+WorkingDirectory=%h
+StandardOutput=journal
+StandardError=journal
+Restart=always
+[Install]
+WantedBy=default.target
+
