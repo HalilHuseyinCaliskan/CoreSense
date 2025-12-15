@@ -27,9 +27,7 @@ for ((i=0;i<cores;i++)); do
    elif [ "$temp" -gt "$threshold_v2" ];
    then
    formula=$((current_frequency*(100-10*(temp-threshold_v2)/threshold_v2)/100))
-   #if [ "$formula" -gt "$freq_threshold" ];
    echo "$formula" > "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq"
-   #fi
    elif [ "$temp" -gt "$threshold_v1" ];
    then
    formula=$((current_frequency*(100-5*(temp-threshold_v1)/threshold_v1)/100))
