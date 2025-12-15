@@ -7,24 +7,31 @@ import os
 import time
 threshold = 2.836
 home = os.path.expanduser("~")
-ss = joblib.load("standard_scaler.pkl")
-model = ort.InferenceSession("lstm_cpu_temperature_predictor.onnx")
+ss = joblib.load("sanal_ortam/daha_guncel_code/scaler.pkl")
+model = ort.InferenceSession("sanal_ortam/daha_guncel_code/lstm_cpu_temperature_predicter.onnx")
 temperature_file = "/sys/class/thermal/thermal_zone0/temp"
 anomali_file = f"{home}/cpu_directory/anomali.log"
 temp_list = []
+global temp,predictions
 while 1:
     with open(temperature_file,"r") as f:
-        temp = float(f.read().strip())
+        temp = float(f.read().strip())/1000.0
         temp_list.append(temp)
     if len(temp_list)==4:
         temp_array = np.array(temp_list).reshape(-1,1)
-        temp_scaled = ss.transform(temp_array).reshape(1,4,1)
+        temp_scaled = ss.transform(temp_array).reshape(1,4,1).astype(np.float32)
         outputs = model.run(None,{"input":temp_scaled})[0]
         predictions = ss.inverse_transform(outputs)[0][0]
+        
+        
+    if  len(temp_list)==5:
         if np.abs(predictions - temp) > threshold:
             with open(anomali_file,"a",newline="",encoding="utf-8") as f:
                 metin = f"Anomali algilandi: CPU Temperature (cpu0): {temp} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
                 f.write(metin)
         temp_list.pop(0)
+        temp_list.pop(0)
+        print(temp_list)
+        print(predictions)
     time.sleep(10)
         
