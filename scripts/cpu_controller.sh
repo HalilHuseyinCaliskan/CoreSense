@@ -1,12 +1,15 @@
 #!/bin/bash
 
+LOG="$HOME/cpu_directory/shutdown.log"
 cores=$(nproc)
 interval=10
+kontrol=0
 freq_threshold=800000
 threshold_v1=40000
 threshold_v2=50000
 threshold_v3=60000
 threshold_v4=70000
+threshold_v5=80000
 cores=$((cores-1))
 for((i=0;i<cores;i++)); do
    echo userspace > "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_governor" 
@@ -36,6 +39,12 @@ for ((i=0;i<cores;i++)); do
    echo "$formula" > "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq"
    echo " cpu$i $current_frequency ve $formula"
    fi
+   fi
+   if [ "$temp" -gt "$threshold_v5" ] && [ "$kontrol" -eq 0 ];
+   then
+   echo "$(date '+%Y-%m-%d %H:%M:%S') - CPU sıcaklığı: ($temp). 1 dk sonra kapanacak." >> "$LOG" 
+   kontrol=1
+   shutdown -h +1
    fi
 done
 sleep "$interval"
