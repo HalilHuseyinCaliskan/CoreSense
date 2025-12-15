@@ -2,13 +2,16 @@
 
 cores=$(nproc)
 interval=10
+freq_threshold=800000
 threshold_v1=40000
 threshold_v2=50000
 threshold_v3=60000
 threshold_v4=70000
+cores=$((cores-1))
 for((i=0;i<cores;i++)); do
    echo userspace > "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_governor" 
-
+done
+echo "$cores"
 while true; do
 for ((i=0;i<cores;i++)); do
    temp=$(cat "/sys/class/thermal/thermal_zone$i/temp")
@@ -19,16 +22,22 @@ for ((i=0;i<cores;i++)); do
    echo "$formula" > "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq"
    elif [ "$temp" -gt "$threshold_v3" ];
    then
-   formula=$((current_frequency*(100-40*(temp-threshold_v3)/threshold_v3)/100))
+   formula=$((current_frequency*(100-15*(temp-threshold_v3)/threshold_v3)/100))
    echo "$formula" > "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq"
    elif [ "$temp" -gt "$threshold_v2" ];
    then
-   formula=$((current_frequency*(100-60*(temp-threshold_v2)/threshold_v2)/100))
+   formula=$((current_frequency*(100-10*(temp-threshold_v2)/threshold_v2)/100))
+   #if [ "$formula" -gt "$freq_threshold" ];
    echo "$formula" > "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq"
+   #fi
    elif [ "$temp" -gt "$threshold_v1" ];
    then
-   formula=$((current_frequency*(100-80*(temp-threshold_v1)/threshold_v1)/100))
+   formula=$((current_frequency*(100-5*(temp-threshold_v1)/threshold_v1)/100))
+   if [ "$formula" -gt "$freq_threshold" ];
+   then
    echo "$formula" > "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq"
+   echo " cpu$i $current_frequency ve $formula"
+   fi
    fi
 done
 sleep "$interval"
