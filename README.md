@@ -15,6 +15,14 @@ CoreSense, Linux tabanlı sistemler için geliştirilmiş, donanım izleme ve ko
 - Python **sanal ortam (venv)** desteği
 
 ## 🚀 Kurulumlar
+
+Github üzerinden servisin bulunduğu repo indirilir.
 ```
 git clone https://github.com/HalilHuseyinCaliskan/CoreSense.git
+cd CoreSense/scripts
+```
+Bash dosyasına yürütme izni verilir ve çalıştırılır.
+```
+chmod +x permissions_and_cli.sh
+./permissions_and_cli.sh
 ```
