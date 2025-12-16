@@ -1,17 +1,15 @@
 # CoreSense
 
-CoreSense, Linux tabanlı sistemler için geliştirilmiş özel bir systemd servisidir. 
+CoreSense, Linux tabanlı sistemler için geliştirilmiş, donanım izleme ve koruma odaklı özel bir **systemd servisidir**.
 
 ## 🚀 Özellikler
-- Gerçek zamanlı CPU sıcaklık takibi 
-- RAM ve CPU kullanımının loglanması
-- PyTorch'dan ONNX'a formatına çevirilmiş LSTM modeli ile CPU'daki sıcaklık anomalisi tespiti ve anomalilerin loglanması
-- CPU ve portlara zarar verecek şekilde yüksek sıcaklıkarda sistemin koruma moduna alınması ve loglanması
-- Systemd servisi olarak arka planda çalışma
-- Özel olarak geliştirilmiş CLI komutlar ile :
-      - Anlık RAM kullanımının görselleştirilmesi
-      - Zaman içerisindeki CPU sıcaklığının değişiminin görselleştirilmesi
-      - CPU'daki tüm çekirdeklerin anlık sıcaklıklarının görselleştirilmesi
-- Sanal ortam desteği
-
- 
+- Gerçek zamanlı CPU sıcaklık takibi
+- RAM ve CPU kullanım verilerinin periyodik olarak loglanması
+- PyTorch’ta eğitilip ONNX formatına dönüştürülmüş LSTM modeli ile CPU sıcaklığı üzerinde **anomali tespiti** ve anomalilerin loglanması
+- CPU ve donanıma zarar verebilecek **kritik sıcaklıklarda** sistemin koruma moduna alınması ve bu durumların kayıt altına alınması
+- **systemd servisi** olarak arka planda kesintisiz çalışma
+- Özel olarak geliştirilmiş **CLI komutları** ile:
+  - Anlık RAM kullanımının görselleştirilmesi
+  - Zaman içerisinde CPU sıcaklığının değişiminin görselleştirilmesi
+  - CPU üzerindeki tüm çekirdeklerin anlık sıcaklıklarının görselleştirilmesi
+- Python **sanal ortam (venv)** desteği
