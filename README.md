@@ -31,14 +31,19 @@ RAM kullanımının görselleştirilmesi için geliştirilmiş CLI komutu.
 memory_pie
 ```
 ![RAM Görseli](images/memory.jpeg)
+
 CPU sıcaklığının zaman içindeki değişimini görselleştirilmesi için geliştirilmiş CLI komutu.
 ```
 cpu_thermal
 ```
+![CPU Görseli](images/cpu_temperature_time.jpeg)
+
 CPU sıcaklığının her bir çekirdeğe göre anlık görselleştirilmesi için geliştirilmiş CLI komutu.
 ```
 cpu_cores_thermal
 ```
+![CPU2 Görseli](images/cpu_cores_thermal.jpeg)
+
 CPU sıcaklığındaki anomalilere ait log dosyası.
 ```
 cat $HOME/cpu_directory/anomali.log
