@@ -30,6 +30,7 @@ RAM kullanımının görselleştirilmesi için geliştirilmiş CLI komutu.
 ```
 memory_pie
 ```
+![RAM Görseli](images/memory.jpeg)
 CPU sıcaklığının zaman içindeki değişimini görselleştirilmesi için geliştirilmiş CLI komutu.
 ```
 cpu_thermal
