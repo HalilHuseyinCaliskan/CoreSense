@@ -13,3 +13,8 @@ CoreSense, Linux tabanlı sistemler için geliştirilmiş, donanım izleme ve ko
   - Zaman içerisinde CPU sıcaklığının değişiminin görselleştirilmesi
   - CPU üzerindeki tüm çekirdeklerin anlık sıcaklıklarının görselleştirilmesi
 - Python **sanal ortam (venv)** desteği
+
+## 🚀 Kurulumlar
+'''
+git clone https://github.com/HalilHuseyinCaliskan/CoreSense.git
+'''
