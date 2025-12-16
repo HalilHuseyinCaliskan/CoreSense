@@ -26,3 +26,23 @@ Bash dosyasına yürütme izni verilir ve çalıştırılır.
 chmod +x permissions_and_cli.sh
 ./permissions_and_cli.sh
 ```
+RAM kullanımının görselleştirilmesi için geliştirilmiş CLI komutu.
+```
+memory_pie
+```
+CPU sıcaklığının zaman içindeki değişimini görselleştirilmesi için geliştirilmiş CLI komutu.
+```
+cpu_thermal
+```
+CPU sıcaklığının her bir çekirdeğe göre anlık görselleştirilmesi için geliştirilmiş CLI komutu.
+```
+cpu_cores_thermal
+```
+CPU sıcaklığındaki anomalilere ait log dosyası.
+```
+cat $HOME/cpu_directory/anomali.log
+```
+RAM'deki kullanılabilir ve kullanılamaz belleklerin loglanması. 
+```
+cat $HOME/memory_directory/memory.log
+```
