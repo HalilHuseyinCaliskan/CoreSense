@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/orangepi/CoreSense/scripts/sanal_ortam/bin/python3
 import matplotlib.pyplot as plt
 import os
 home = os.path.expanduser("~")
