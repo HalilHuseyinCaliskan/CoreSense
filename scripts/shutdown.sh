@@ -13,7 +13,7 @@ for ((i=0;i<cores;i++)); do
    temp=$(cat "/sys/class/thermal/thermal_zone$i/temp")
    if [ "$temp" -gt "$threshold_v1" ] && [ "$kontrol" -eq 0 ];
    then
-   echo "$(date '+%Y-%m-%d %H:%M:%S') - CPU{i} sıcaklığı: ($temp). 1 dk sonra kapanacak." >> "$LOG" 
+   echo "$(date '+%Y-%m-%d %H:%M:%S') - CPU{$i} sıcaklığı: ($temp). 1 dk sonra kapanacak." >> "$LOG" 
    kontrol=1
    fi
 done
