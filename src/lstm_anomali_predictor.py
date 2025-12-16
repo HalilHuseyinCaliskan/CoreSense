@@ -6,7 +6,7 @@ import joblib
 from datetime import datetime
 import os
 import time
-threshold = 2.836
+threshold = 5.836
 home = os.path.expanduser("~")
 ss = joblib.load(f"{home}/CoreSense/models/scaler.pkl")
 model = ort.InferenceSession(f"{home}/CoreSense/models/lstm_cpu_temperature_predicter.onnx")
@@ -28,7 +28,7 @@ while 1:
     if  len(temp_list)==5:
         if np.abs(predictions - temp) > threshold:
             with open(anomali_file,"a",newline="",encoding="utf-8") as f:
-                metin = f"Anomali algilandi: CPU Temperature (cpu0): {temp} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+                metin = f"Anomali algilandi: CPU Temperature (cpu0): {temp}  CPU Predicter (cpu0): {predictions} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
                 f.write(metin)
         else:
             with open(kontrol_file,"a",newline="",encoding="utf-8") as f:
