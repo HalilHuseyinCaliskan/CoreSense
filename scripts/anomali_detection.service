@@ -1,7 +1,7 @@
 [Unit]
 Description=Anomali Detection Servisi
 [Service]
-ExecStart=/usr/bin/env python3 /home/orangepi/CoreSense/src/lstm_anomali_predictor.py
+ExecStart=/home/orangepi/CoreSense/scripts/sanal_ortam/bin/python3 /home/orangepi/CoreSense/src/lstm_anomali_predictor.py
 WorkingDirectory=/home
 StandardOutput=journal
 StandardError=journal
