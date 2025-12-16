@@ -9,3 +9,4 @@ chmod +x $HOME/CoreSense/scripts/shutdown.sh
 chmod +x $HOME/CoreSense/scripts/memory_usage.sh
 chmod +x $HOME/CoreSense/scripts/cpu_temp.sh
 chmod +x $HOME/CoreSense/scripts/commends.sh
+sudo mv $HOME/CoreSense/scripts/core_sense.service /etc/systemd/system/core_sense.service
