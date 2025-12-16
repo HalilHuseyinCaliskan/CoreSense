@@ -1,0 +1,11 @@
+[Unit]
+Description=Anomali Detection Servisi
+[Service]
+ExecStart=/usr/bin/env python3 /home/orangepi/CoreSense/src/lstm_anomali_predictor.py
+WorkingDirectory=/home
+StandardOutput=journal
+StandardError=journal
+Restart=always
+User=orangepi
+[Install]
+WantedBy=multi-user.target
