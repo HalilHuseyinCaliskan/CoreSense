@@ -12,7 +12,7 @@ ss = joblib.load(f"{home}/CoreSense/models/scaler.pkl")
 model = ort.InferenceSession(f"{home}/CoreSense/models/lstm_cpu_temperature_predicter.onnx")
 temperature_file = "/sys/class/thermal/thermal_zone0/temp"
 anomali_file = f"{home}/cpu_directory/anomali.log"
-anomali_file = f"{home}/cpu_directory/kontrol.log"
+kontrol_file = f"{home}/cpu_directory/kontrol.log"
 temp_list = []
 global temp,predictions
 while 1:
