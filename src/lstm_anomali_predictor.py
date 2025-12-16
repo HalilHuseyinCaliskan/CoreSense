@@ -24,14 +24,15 @@ while 1:
         temp_scaled = ss.transform(temp_array).reshape(1,4,1).astype(np.float32)
         outputs = model.run(None,{"input":temp_scaled})[0]
         predictions = ss.inverse_transform(outputs)[0][0]
-        with open(kontrol_file,"a",newline="",encoding="utf-8") as f:
-                metin = f"Anomali bulunamadi: CPU Temperature (cpu0): {temp} CPU Predicter (cpu0): {predictions} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
-                f.write(metin)
         
     if  len(temp_list)==5:
         if np.abs(predictions - temp) > threshold:
             with open(anomali_file,"a",newline="",encoding="utf-8") as f:
                 metin = f"Anomali algilandi: CPU Temperature (cpu0): {temp} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+                f.write(metin)
+        else:
+            with open(kontrol_file,"a",newline="",encoding="utf-8") as f:
+                metin = f"Anomali bulunamadi: CPU Temperature (cpu0): {temp} CPU Predicter (cpu0): {predictions} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
                 f.write(metin)
         temp_list.pop(0)
         temp_list.pop(0)
