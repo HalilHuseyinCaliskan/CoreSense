@@ -11,7 +11,7 @@ chmod +x $HOME/CoreSense/scripts/memory_usage.sh
 chmod +x $HOME/CoreSense/scripts/cpu_temp.sh
 chmod +x $HOME/CoreSense/scripts/commends.sh
 sudo mv $HOME/CoreSense/scripts/core_sense.service /etc/systemd/system/core_sense.service
-sudo mv $HOME/CoreSense/src/anomali_detection.service /etc/systemd/system/anomali_detection.service
+sudo mv $HOME/CoreSense/scripts/anomali_detection.service /etc/systemd/system/anomali_detection.service
 sudo systemctl daemon-reload
 sudo systemctl start core_sense.service
 sudo systemctl enable core_sense.service
