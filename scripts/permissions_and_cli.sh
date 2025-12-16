@@ -1,4 +1,8 @@
 #!/bin/bash
+sudo apt install python3-venv
+python3 -m venv sanal_ortam
+source sanal_ortam_adi/bin/activate
+pip install numpy pandas onnxruntime scikit-learn joblib
 chmod +x $HOME/CoreSense/src/memory_pie.py
 sudo mv $HOME/CoreSense/src/memory_pie.py /usr/local/bin/memory_pie
 chmod +x $HOME/CoreSense/src/cpu_termal.py
