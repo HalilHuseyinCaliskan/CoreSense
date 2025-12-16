@@ -31,7 +31,5 @@ while 1:
                 f.write(metin)
         temp_list.pop(0)
         temp_list.pop(0)
-        print(temp_list)
-        print(predictions)
     time.sleep(10)
         
