@@ -7,8 +7,8 @@ import os
 import time
 threshold = 2.836
 home = os.path.expanduser("~")
-ss = joblib.load("sanal_ortam/daha_guncel_code/scaler.pkl")
-model = ort.InferenceSession("sanal_ortam/daha_guncel_code/lstm_cpu_temperature_predicter.onnx")
+ss = joblib.load("home/CoreSense/model/scaler.pkl")
+model = ort.InferenceSession("home/CoreSense/model/lstm_cpu_temperature_predicter.onnx")
 temperature_file = "/sys/class/thermal/thermal_zone0/temp"
 anomali_file = f"{home}/cpu_directory/anomali.log"
 temp_list = []
