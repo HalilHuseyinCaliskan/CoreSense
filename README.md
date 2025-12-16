@@ -42,7 +42,7 @@ CPU sıcaklığındaki anomalilere ait log dosyası.
 ```
 cat $HOME/cpu_directory/anomali.log
 ```
-RAM'deki kullanılabilir ve kullanılamaz belleklerin loglanması. 
+RAM'deki kullanılabilir ve kullanılamaz bellek alanlarına ait log dosyası.
 ```
 cat $HOME/memory_directory/memory.log
 ```
