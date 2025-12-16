@@ -7,17 +7,17 @@ used_memory_file = f"{home}/memory_directory/used_memory.log"
 with open(available_memory_file,"r") as f:
     available_memory_str = f.read().strip()
     if available_memory_str.endswith("Gi"):
-        available_memory_str = float(available_memory_str[:-3].replace(",","."))
+        available_memory_str = float(available_memory_str[:-2].replace(",","."))
     else:
-        available_memory_str = float(available_memory_str[:-3].replace(",","."))
+        available_memory_str = float(available_memory_str[:-2].replace(",","."))
         available_memory_str = available_memory_str/1024
 
 with open(used_memory_file,"r") as f:
     used_memory_str = f.read().strip()
     if used_memory_str.endswith("Gi"):
-        used_memory_str = float(used_memory_str[:-3].replace(",","."))
+        used_memory_str = float(used_memory_str[:-2].replace(",","."))
     else:
-        used_memory_str = float(used_memory_str[:-3].replace(",","."))
+        used_memory_str = float(used_memory_str[:-2].replace(",","."))
         used_memory_str = used_memory_str/1024
 labels = ["Available Memory","Used Memory"]
 sizes = [float(available_memory_str),float(used_memory_str)]
