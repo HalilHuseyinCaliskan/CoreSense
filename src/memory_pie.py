@@ -5,7 +5,7 @@ home = os.path.expanduser("~")
 available_memory_file = f"{home}/memory_directory/available_memory.log"
 used_memory_file = f"{home}/memory_directory/used_memory.log"
 with open(available_memory_file,"r") as f:
-    available_memory_str = f.read()
+    available_memory_str = f.read().strip()
     if available_memory_str.endswith("Gi"):
         available_memory_str = float(available_memory_str[:-3].replace(",","."))
     else:
@@ -13,7 +13,7 @@ with open(available_memory_file,"r") as f:
         available_memory_str = available_memory_str/1024
 
 with open(used_memory_file,"r") as f:
-    used_memory_str = f.read()
+    used_memory_str = f.read().strip()
     if used_memory_str.endswith("Gi"):
         used_memory_str = float(used_memory_str[:-3].replace(",","."))
     else:
