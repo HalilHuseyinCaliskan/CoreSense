@@ -42,7 +42,7 @@ CPU sıcaklığının her bir çekirdeğe göre anlık görselleştirilmesi içi
 ```
 cpu_cores_thermal
 ```
-![CPU2 Görseli](images/cpu_cores_thermal.jpeg)
+![CPU2 Görseli](images/cpu_cores_thermel.jpeg)
 
 CPU sıcaklığındaki anomalilere ait log dosyası.
 ```
