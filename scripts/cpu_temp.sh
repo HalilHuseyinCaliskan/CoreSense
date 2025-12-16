@@ -11,7 +11,7 @@ while true; do
 temp=$(cat "$dosya")
 temp=$(( $temp / 1000 ))
 echo "$temp" >> "$LOG_FILE_COLLECTOR"
-if [ "$temp" -gt 80 ]
+if [ "$temp" -gt 60 ]
 then
 echo "CPU Temperature: $temp - $(date)" >> "$LOG_FILE"
 fi
