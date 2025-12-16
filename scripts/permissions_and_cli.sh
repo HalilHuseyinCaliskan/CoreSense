@@ -12,3 +12,5 @@ chmod +x $HOME/CoreSense/scripts/commends.sh
 sudo mv $HOME/CoreSense/scripts/core_sense.service /etc/systemd/system/core_sense.service
 sudo systemctl start core_sense.service
 sudo systemctl enable core_sense.service
+sudo systemctl daemon-reload
+sudo systemctl restart core_sense.service
