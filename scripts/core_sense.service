@@ -1,12 +1,12 @@
 [Unit]
 Description=CoreSense Servisi
 [Service]
-ExecStart=/home/orangepi/CoreSense/scripts/commends.sh
+ExecStart=/home/user_name/CoreSense/scripts/commends.sh
 WorkingDirectory=/home
 StandardOutput=journal
 StandardError=journal
 Restart=always
-User=orangepi
+User=user_name
 [Install]
 WantedBy=multi-user.target
 
