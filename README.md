@@ -46,9 +46,14 @@ cpu_cores_thermal
 
 CPU sıcaklığındaki anomalilere ait log dosyası.
 ```
+
 cat $HOME/cpu_directory/anomali.log
 ```
 RAM'deki kullanılabilir ve kullanılamaz bellek alanlarına ait log dosyası.
 ```
+
+## 🚀 Önemli Notlar
+Servis dosyalarında **User** kısmına sisteminizdeki kullanıcı adını ve **home** adresini sisteminizdeki home adresini veriniz.
+
 cat $HOME/memory_directory/memory.log
 ```
