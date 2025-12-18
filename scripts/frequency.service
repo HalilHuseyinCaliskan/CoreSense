@@ -1,0 +1,13 @@
+[Unit]
+Description=CoreSense Servisi
+[Service]
+ExecStart=/home/orangepi/cpu.sh
+WorkingDirectory=/home/orangepi
+StandardOutput=journal
+StandardError=journal
+Restart=always
+User=root
+Environment="HOME=/home/orangepi"
+[Install]
+WantedBy=multi-user.target
+
