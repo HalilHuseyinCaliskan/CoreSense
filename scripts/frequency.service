@@ -1,7 +1,7 @@
 [Unit]
 Description=CoreSense Servisi
 [Service]
-ExecStart=/home/orangepi/cpu_frequency.sh
+ExecStart=/home/orangepi/CoreSense/scripts/cpu_frequency.sh
 WorkingDirectory=/home/orangepi
 StandardOutput=journal
 StandardError=journal
