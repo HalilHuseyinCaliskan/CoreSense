@@ -3,7 +3,7 @@
 cores=$(nproc)
 interval=10
 freq_threshold=800000
-threshold_v1=40000
+threshold_v1=50000
 cores=$((cores-1))
 for((i=0;i<cores;i++)); do
    echo userspace > "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_governor" 
