@@ -1,13 +1,13 @@
 [Unit]
 Description=CoreSense Servisi
 [Service]
-ExecStart=/home/orangepi/CoreSense/scripts/cpu_frequency.sh
+ExecStart=/home/user_name/CoreSense/scripts/cpu_frequency.sh
 WorkingDirectory=/home/orangepi
 StandardOutput=journal
 StandardError=journal
 Restart=always
 User=root
-Environment="HOME=/home/orangepi"
+Environment="HOME=/home/user_name"
 [Install]
 WantedBy=multi-user.target
 
